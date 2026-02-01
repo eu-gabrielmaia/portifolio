@@ -35,11 +35,11 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body
-        className={`${tomorrow.variable} antialiased text-foreground min-h-screen flex flex-col mx-15 bg-background`}
+        className={`${tomorrow.variable} antialiased text-foreground min-h-screen flex flex-col md:mx-15`}
       >
         <Gap />
         <Header />
-        <main className="border-x border-zinc-700">
+        <main className="border-x border-zinc-200 dark:border-zinc-900">
         {children}
         </main>
         <Footer />

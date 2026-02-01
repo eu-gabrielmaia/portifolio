@@ -1,14 +1,30 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-interface NavItemProps {
-    text: string;
-    href: string;
-}
+export function NavItem({ href, text }: { href: string; text: string }) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
-export function NavItem({ text, href }: NavItemProps) {
-    return (
-        <nav>
-            <Link href={href} className="text-zinc-400 text-sm font-medium hover:text-white pb-0.75 hover:border-b-2 hover:border-white transition delay-150 duration-300 ease-in-out">{text}</Link>
-        </nav>
-    );
+  return (
+    <Link
+      href={href}
+      className={`flex flex-col justify-center items-center text-sm transition-colors
+    ${
+      isActive
+        ? "text-zinc-900 font-semibold dark:text-white"
+        : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+    }
+  `}
+    >
+      {text}
+
+      <div
+        className={`mt-px h-0.5 w-2 text-bold transition-colors
+      ${isActive ? "bg-zinc-900 dark:bg-zinc-400" : "bg-transparent"}
+    `}
+      />
+    </Link>
+  );
 }
