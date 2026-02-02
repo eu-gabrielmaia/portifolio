@@ -1,17 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Gap } from "@/components/gap";
 import { Gmail } from "@/components/ui/svgs/gmail";
 import { Linkedin } from "@/components/ui/svgs/linkedin";
 import { GithubDark } from "@/components/ui/svgs/githubDark";
 import { GithubLight } from "@/components/ui/svgs/githubLight";
+import { SecaoProjetos } from "./secao-projetos";
+import { SecaoSobre } from "./secao-sobre";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-tomorrow dark:bg-background dark:[--pattern-fg:white]/70">
       <div className="flex w-full flex-col items-center py-18 bg-transparent sm:items-start">
         <div className="w-full flex justify-center items-center gap-8 sm:flex-row sm:items-center sm:gap-16">
-          <div className="w-full flex justify-center items-center gap-10 sm:gap-8 flex-col sm:flex-row border-y border-zinc-200 dark:border-zinc-900 p-4">
-            <div className="h-46 w-46  border border-zinc-600 overflow-hidden">
+          <div className="w-full flex justify-center items-center gap-10 sm:gap-8 flex-col sm:flex-row">
+            <div className="h-46 w-46 border border-zinc-600 overflow-hidden">
               <Image
                 className="w-full h-full object-cover p-1"
                 src={"https://avatars.githubusercontent.com/eu-gabrielmaia"}
@@ -47,25 +50,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center my-8 w-full px-8 sm:px-0 py-6">
-          <div className="w-max max-w-xl">
-            <h1 className="text-2xl font-bold">Sobre</h1>
-            <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400 text-wrap text-justify">
-              Estudante de tecnologia com{" "}
-              <span className="dark:text-white font-semibold">
-                formação técnica em informática pelo COTIL
-              </span>
-              , com base em desenvolvimento de sistemas e conhecimentos em
-              ferramentas digitais. Possuo{" "}
-              <span className="dark:text-white font-semibold">
-                boa organização, raciocínio lógico e facilidade para aprender
-                processos administrativos
-              </span>
-              . Busco oportunidade como aprendiz para desenvolver habilidades
-              profissionais e contribuir no dia a dia do setor.
-            </p>
-          </div>
-        </div>
+        <SecaoSobre />
+        <Gap />
+        <SecaoProjetos />
       </div>
     </div>
   );

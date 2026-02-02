@@ -1,4 +1,4 @@
-import { Button } from "./button";
+import { Button } from "./button-destaque";
 import { NavItem } from "./nav-item";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
@@ -8,7 +8,7 @@ export function Header() {
       <nav className="flex gap-4">
         <NavItem text="Home" href={"/"} />
         <NavItem text="Sobre" href={"/sobre"} />
-        <NavItem text="Projetos" href={"/projeto"} />
+        <NavItem text="Projetos" href={"/projetos"} />
         <NavItem text="Contato" href={"/contato"} />
       </nav>
       <div className="flex gap-2">
